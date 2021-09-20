@@ -1,0 +1,167 @@
+/* Global */
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('../font/Metropolis-SemiBold.woff2') format('woff2'),
+       url('../font/Metropolis-SemiBold.woff') format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Metropolis';
+  src: url('../font/Metropolis-Bold.woff2') format('woff2'),
+       url('../font/Metropolis-Bold.woff') format('woff');
+  font-weight: 600;
+  font-style: normal;
+}
+
+:root {
+  --white: #FFF;
+  --dark-800: #191A1F;
+
+  --yellow: #FFE440;
+  --magenta: #EC008C;
+  --blue: #00AEEF;
+
+  --heading-font-family: 'Metropolis', sans-serif;
+}
+
+html {
+  background: var(--dark-800);
+  color: var(--white);
+  font-family: 'Inter', sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+a.btn {
+  color: var(--white);
+  font-size: 14px;
+  font-family: var(--heading-font-family);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 1px solid var(--white);
+  display: flex;
+  align-items: center;
+}
+
+a.btn div {
+  padding: 0 26px;
+}
+
+a.btn i {
+  padding: 12px;
+  font-size: 16px;
+  border-left: 1px solid var(--white);
+}
+
+
+
+/* Container */
+
+.container {
+  width: 100%;
+}
+
+.wrapper {
+  max-width: 1800px;
+  margin: 0 auto;
+  padding-left: 4rem;
+  padding-right: 4rem;
+}
+
+
+
+/* Navigation */
+
+.nav.continer {
+}
+
+.nav .wrapper {
+  height: 60px;
+  padding-top: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nav .nav-links {
+  height: 100%;
+  display: flex;
+  grid-column-gap: 40px;
+}
+
+.nav .nav-links a {
+  padding: 0 20px;
+  color: var(--white);
+  font-family: var(--heading-font-family);
+  font-size: 14px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: flex;
+  align-items: center;
+}
+
+
+
+/* Hero */
+
+.hero h1 {
+  max-width: 750px;
+  font-family: var(--heading-font-family);
+  font-size: 64px;
+  font-weight: 600;
+  line-height: 82px;
+  text-transform: uppercase;
+  background: linear-gradient(90deg, var(--yellow), var(--magenta), var(--blue));
+	background-size: 200% 200%;
+	animation: gradient 10s ease infinite;
+  -webkit-background-clip: text;
+  -webkit-text-stroke: 3px transparent;
+  -webkit-text-fill-color: var(--dark-800);
+  transform-style: preserve-3d;
+  transform: perspective(1000px);
+}
+
+@keyframes gradient {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+
+.hero h1 span {
+  -webkit-text-stroke: 0 var(--white);
+  -webkit-text-fill-color: var(--white);
+  display: inline-block;
+  transform: translateZ(20px);
+}
+
+section#static {
+  position: absolute;
+  top: -50px;
+  left: -50px;
+  width: calc(100% + 50px);
+  height: calc(100vh + 50px);
+  background: repeating-linear-gradient(#fff,#fff 50%,#fff0 50%,#fff0);
+  background-size: 5px 5px;
+  filter: url(#noise);
+  mix-blend-mode: overlay;
+  opacity: .5;
+  pointer-events: none;
+}
+
+svg#static-svg {
+  width: 0;
+  height: 0;
+}
